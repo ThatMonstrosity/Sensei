@@ -3,7 +3,3 @@ gitRepoUrl = "https://github.com/ThatMonstrosity/Sensei"
 
 [home]
 enabled = true
-
-projectName = "Sensei"
-baseUrl = "/Sensei"
-tagline = "A work in progress framework."
