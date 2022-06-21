@@ -1,7 +1,12 @@
 [package]
-name = "prest/sensei"
-version = "0.1.0"
+name = "thatmonstrosity/sensei"
+version = "0.1.5"
 registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
 
 [dependencies]
+Net = "vorlias/net@3.0.1"
+Input = "sleitnick/input@2.1.0"
+Shake = "sleitnick/shake@0.1.5"
+Signal = "sleitnick/signal@1.2.0"
+Janitor = "howmanysmall/janitor@^1.14.1"
