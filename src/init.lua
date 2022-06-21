@@ -198,7 +198,7 @@ end
 	```
 ]=]
 function Sensei:AwaitStart()
-	if not self._Started then return end
+	if self._Started then return end
 	table.insert(self._Awaiting, coroutine.running())
 	coroutine.yield()
 end
