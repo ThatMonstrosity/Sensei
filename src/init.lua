@@ -24,6 +24,7 @@ Sensei.Janitor = require(Packages.Janitor)
 Sensei.Net = require(Packages.Net)
 Sensei.Shake = require(Packages.Shake)
 Sensei.Signal = require(Packages.Signal)
+Sensei.Promise = require(Packages.Promise)
 
 function Sensei:_RunExtensions(funcName, provider)
 	local function Run(extension)
@@ -67,6 +68,13 @@ function Sensei:AddProvider(provider: Provider): Provider
 	return provider
 end
 
+function Sensei:GetProvider(name)
+	for _, provider in pairs(self._Providers) do
+		if provider.Name and provider.Name == name then
+			return provider
+		end
+	end
+end
 
 function Sensei:Start() --// Yields, dont call more than once
 
@@ -98,12 +106,12 @@ function Sensei:Start() --// Yields, dont call more than once
 			end)
 		end
 		--// Add RenderStepped / Heartbeat / PlayerAdded / PlayerRemoving methods to a table
-		if typeof(provider.OnRenderStepped) == "function" then
-			table.insert(self._RenderSteppedFunctions, provider.OnRenderStepped)
+		if typeof(provider.RenderStepped) == "function" then
+			table.insert(self._RenderSteppedFunctions, provider.RenderStepped)
 		end
 
-		if typeof(provider.OnHeartbeat) == "function" then
-			table.insert(self._HeartbeatFunctions, provider.OnHeartbeat)
+		if typeof(provider.Heartbeat) == "function" then
+			table.insert(self._HeartbeatFunctions, provider.Heartbeat)
 		end
 
 		if typeof(provider.PlayerAdded) == "function" then
