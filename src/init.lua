@@ -69,6 +69,12 @@ function Sensei:AddProvider(provider: Provider): Provider
 end
 
 function Sensei:GetProvider(name)
+	-- Yield until Sensei is loaded and started
+	if not self._Started then
+		table.insert(self._Awaiting, coroutine.running())
+		coroutine.yield()
+	end
+	-- After it is 100% loaded then get the provider
 	for _, provider in pairs(self._Providers) do
 		if provider.Name and provider.Name == name then
 			return provider
