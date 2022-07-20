@@ -26,6 +26,8 @@ Sensei.Shake = require(Packages.Shake)
 Sensei.Signal = require(Packages.Signal)
 Sensei.Promise = require(Packages.Promise)
 
+Sensei.ProfileService = require(Packages.ProfileService)
+
 function Sensei:_RunExtensions(funcName, provider)
 	local function Run(extension)
 		local func = extension[funcName]
