@@ -1,7 +1,7 @@
 [package]
 name = "thatmonstrosity/sensei"
 
-version = "0.2.0"
+version = "0.2.1"
 
 registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
@@ -13,5 +13,5 @@ Shake = "sleitnick/shake@0.1.5"
 Signal = "sleitnick/signal@1.2.0"
 Janitor = "howmanysmall/janitor@^1.14.1"
 Promise = "evaera/promise@4.0.0"
-ProfileService = "thatmonstrosity/profileservice@0.1.0"
+ProfileService = "thatmonstrosity/profileservice@^0.1"
 
